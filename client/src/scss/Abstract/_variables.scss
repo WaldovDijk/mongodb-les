@@ -1,0 +1,28 @@
+//Colors
+$color-main: #0d0e10;
+$color-red: #ff4e4e;
+$color-green: #02a247;
+$color-icons: #6d6f76;
+$color-text: #ffffff;
+$color-text-label: #6d6f76;
+
+//color levels
+$elevation-01: #1d1d1d;
+$elevation-02: #212121;
+$elevation-03: #242424;
+$elevation-04: #272727;
+$elevation-06: #2c2c2c;
+$elevation-08: #2d2d2d;
+$elevation-12: #323232;
+$elevation-16: #353535;
+$elevation-24: #373737;
+
+$background: #2e313b;
+$color-input: #343741;
+$nav: $color-main;
+$nav-icons: #282b33;
+$nav-breakpoint: #696f84;
+$nav-second: lighten($nav, 5%);
+
+$input-border-green: 0.1rem solid;
+$input-border-red: 0.1rem solid;

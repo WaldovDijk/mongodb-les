@@ -1,0 +1,57 @@
+@import '../../scss/Abstract/variables';
+
+.register {
+  grid-column: 1/-1;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  &__body {
+    box-shadow: 0.5rem 1rem 1rem rgba(#000000, 0.6);
+    width: 45rem;
+    background-color: darken($background, 5%);
+    padding: 5rem;
+    border-radius: 1rem;
+    display: grid;
+    justify-items: center;
+  }
+  &__title {
+    text-align: center;
+    font-size: 5rem;
+    color: $color-text;
+    padding-bottom: 2rem;
+  }
+  &__or {
+    width: 34rem;
+    border-bottom: solid 2px $color-input;
+
+    &::before {
+      content: 'or';
+      color: $color-text;
+      position: absolute;
+      font-size: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: darken($background, 5%);
+      margin: 0 1rem;
+    }
+  }
+  &__google {
+    cursor: pointer;
+    font-size: 2rem;
+    &:hover {
+      & .register__google--text {
+        text-decoration: underline;
+      }
+    }
+    & .icon-google {
+      color: $color-icons;
+      text-decoration: none;
+    }
+    &--text {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+}

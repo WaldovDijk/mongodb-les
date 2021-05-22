@@ -1,0 +1,112 @@
+.fade {
+  &__avatar {
+    &-enter {
+      opacity: 0;
+      transform: scale(0.5);
+      &-active {
+        opacity: 1;
+        transform: scale(1);
+        transition: all 500ms;
+      }
+    }
+    &-exit {
+      opacity: 1;
+      &-active {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 500ms;
+      }
+    }
+  }
+  &__body {
+    &-appear {
+      transform: translate(100%, 0);
+      &-active {
+        transform: translate(0, 0);
+        transition: all 500ms;
+      }
+    }
+  }
+  &-enter {
+    opacity: 0;
+    &-active {
+      opacity: 1;
+      transition: all 500ms;
+    }
+  }
+  &-exit {
+    opacity: 1;
+    &-active {
+      opacity: 0;
+      transition: all 500ms;
+    }
+  }
+}
+
+.slide {
+  &__nav {
+    &-appear {
+      transform: translate(0, -100%);
+      &-active {
+        transform: translate(0, 0);
+        transition: all 500ms;
+      }
+    }
+  }
+  &__champselect {
+    &-appear {
+      transform: translate(0, -100%);
+      &-active {
+        transform: translate(0, 0);
+        transition: all 0.5s;
+        transition-delay: 1.5s;
+      }
+    }
+    &-exit {
+      &-active {
+        transform: translate(0, -100%);
+        transition: all 1.5s;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+}
+
+.width__team {
+  &-red {
+    &-enter {
+      &-done {
+        transition: none;
+        width: 100%;
+        grid-column: draft-start/ draft-champ-start;
+      }
+    }
+    &-exit {
+      &-active {
+        transition: none;
+        width: 50%;
+      }
+      &-done {
+        width: 100%;
+      }
+    }
+  }
+  &-blue {
+    &-enter {
+      &-done {
+        transition: none;
+        width: 100%;
+        grid-column: draft-champ-end / draft-end;
+      }
+    }
+    &-exit {
+      &-active {
+        transition: none;
+        width: 50%;
+      }
+      &-done {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../scss/Abstract/variables';
+
+.main {
+  height: 100%;
+  display: grid;
+  grid-template-columns: [nav-start] 10rem [nav-sm-end] 10rem [nav-lg-end body-start] 1fr [body-end];
+  overflow: hidden;
+  &__body {
+    height: 100%;
+    grid-column: nav-lg-end/-1;
+    display: grid;
+  }
+  &__user {
+    font-size: 3rem;
+    color: white;
+  }
+}
