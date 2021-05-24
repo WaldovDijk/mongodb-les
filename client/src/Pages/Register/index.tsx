@@ -5,6 +5,7 @@ import Axios from 'axios';
 import Input from '../../Components/Global/Input';
 import SpringButton from '../../Components/Custom/Button';
 import { StyledLink, LoginLink } from '../../Components/Custom/Link';
+import useAuth from '../../Hooks/Auth';
 
 import './register.styles.scss';
 
@@ -15,6 +16,8 @@ const Register = () => {
   const [password1Err, setPassword1Err] = useState('');
   const [password2, setPassword2] = useState('');
   const [password2Err, setPassword2Err] = useState('');
+
+  const { register } = useAuth();
 
   const submitRegister = async (e: any) => {
     e.preventDefault();
@@ -40,21 +43,10 @@ const Register = () => {
     if (emailErr || password1Err || password2Err) {
       return;
     } else {
-      const response = await Axios({
-        method: 'put',
-        baseURL: 'http://localhost:8083',
-        url: '/auth/register',
-        data: {
-          email: email,
-          password: password1,
-        },
-        withCredentials: true,
-        validateStatus: null,
-      });
-      if (response.data.error) {
-        setEmailErr(response.data.error);
+      const response = await register(email, password1);
+      if (response?.error) {
+        setEmailErr(response?.error);
       }
-      console.log(response);
     }
   };
 

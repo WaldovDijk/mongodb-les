@@ -7,6 +7,25 @@ const useAuth = () => {
   const dispatch = useDispatch();
   let history = useHistory();
 
+  const register = async (email: string, password: string) => {
+    const response = await Axios({
+      method: 'put',
+      baseURL: 'http://localhost:8083',
+      url: '/auth/register',
+      data: {
+        email: email,
+        password: password,
+      },
+      withCredentials: true,
+      validateStatus: null,
+    });
+    if (response.data.error) {
+      return { error: response.data.error };
+    }
+    setLogin(response.data);
+    history.push('/');
+  };
+
   const logout = async () => {
     await Axios({
       method: 'get',
@@ -94,6 +113,7 @@ const useAuth = () => {
     logout,
     checkLogin,
     checkAuth,
+    register,
   };
 };
 

@@ -7,11 +7,10 @@ import {
   Socket,
   Namespace,
   Input,
-  Broadcast,
   Emit,
   Args,
 } from '@tsed/socketio';
-import { ChangeStream, ChangeEventUpdate, ObjectID } from 'mongodb';
+import { ChangeEventUpdate } from 'mongodb';
 import { User } from '../../../models/user';
 
 @SocketService('/users')
